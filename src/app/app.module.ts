@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PanelComponent } from './pages/panel/panel.component';
 import { NavComponent } from './shared/nav/nav.component';
-import { RadicadosComponent } from './components/radicados/radicados.component';
 import { BuscadorComponent } from './shared/buscador/buscador.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
     LoginComponent,
     PanelComponent,
     NavComponent,
-    RadicadosComponent,
     BuscadorComponent
   ],
   imports: [
