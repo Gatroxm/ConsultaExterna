@@ -5,37 +5,53 @@
     <div class="row mt-5 pt-5">
         <div class="col-md-12">
             <div class="accordion" id="accordionExample">
-                <div class="card"*ngFor="let consultas of data let i = index;">
+                <div class="card"*ngFor="let consultas of data; let i = index">
                     <div class="card-header" id="headingOne" >
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
+                            <button 
+                            class="btn btn-link" 
+                            type="button" 
+                            data-toggle="collapse" 
+                            data-target="#collapseOne"
+                            aria-expanded="true" 
+                            aria-controls="collapseOne">
                                 {{ data[i].nombre }}
                             </button>
                         </h2>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    <div 
+                        id="collapseOne" 
+                        class="collapse show" 
+                        aria-labelledby="headingOne"
                         data-parent="#accordionExample">
                         <div class="card-body">
                             <p><strong>Usuario</strong>: {{ data[i].usuario }}</p>
                             <p><strong>Fecha</strong>: {{ data[i].fecha }}</p>
                             <p><strong>Serial</strong>: {{ data[i].serial }}</p>
-                            <p><strong>Hitorial de Consulta</strong></p>
-                             <!-- <div class="list-group" *ngFor="let data[i].estados of dataestado let a = index;">
-                                <button type="button" class="list-group-item list-group-item-action active">
-                                    Fecha Estado
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-action">
-                                    {{ dataestado[a].fecha }}
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-action active">
-                                    Estado Solicitud
-                                </button>
-                                <button type="button" class="list-group-item list-group-item-action">
-                                    {{ dataestado[a].estado }}
-                                </button>
-                            </div>  -->
+                            <p><strong>Historial de Consulta</strong></p>
+                            <div class="list-group mb-3" *ngFor="let  estado of data[i].estados;">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col">
+                                            <button type="button" class="list-group-item list-group-item-action active">
+                                                Fecha Estado
+                                            </button>
+                                            <button type="button" class="list-group-item list-group-item-action">
+                                                {{ estado.fecha }}
+                                            </button>
+                                        </div>
+                                        <div class="col">
+                                            <button type="button" class="list-group-item list-group-item-action active">
+                                                Estado Solicitud
+                                            </button>
+                                            <button type="button" class="list-group-item list-group-item-action">
+                                                {{ estado.estado }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
